@@ -18,7 +18,7 @@ public class Converter {
             double valueUnit = scanner.nextDouble(); // значение еденицы преобразования
             lengthConverter.length(converterUnit, valueUnit);
         } else {
-            System.out.println("Вы ввели несуществующее значение :(");
+            System.out.println("Вы ввели несуществующее значение :((");
         }
 
     }
