@@ -7,9 +7,9 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
-        String arithmeticOper = scanner.next();
+        String operator = scanner.next();
 
-        switch (arithmeticOper) {
+        switch (operator) {
             case "/":
                 if (b != 0) System.out.println(a / b);
                 else System.out.println("На 0 делить нельзя!");
