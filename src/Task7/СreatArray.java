@@ -2,7 +2,7 @@ package Task7;
 
 import java.util.Scanner;
 
-public class Сycles {
+public class СreatArray {
     static Scanner scanner = new Scanner(System.in);
     static final double X = 54;
     static final double Y = 23.65;
