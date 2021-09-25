@@ -11,7 +11,7 @@ public class Converter {
         int converterMode = scanner.nextInt(); // режим конвертации
         switch (converterMode) {
             case 1:
-                // weightConverter.weight(value);
+                // weightConverter.weight();
             case 2:
                 System.out.println("Выберите единицу измерения: 1 - метр, 2 - миля, 3 - ярд, 4 - фут");
                 int converterUnit = scanner.nextInt(); // единица конвертации

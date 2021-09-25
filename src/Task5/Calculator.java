@@ -24,7 +24,7 @@ public class Calculator {
                 System.out.println(a - b);
                 break;
             default:
-                System.out.println("Некоректный оператор");
+                System.out.println("Некорректный оператор");
         }
     }
 }
