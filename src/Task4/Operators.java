@@ -13,7 +13,6 @@ public class Operators {
         System.out.println("Среднее арифметическое трех чисел: " + avgNumbers(x, y, z));
 
         double roundingAvg = Math.floor(Operators.avgNumbers(x, y, z) / 2);
-        System.out.println(roundingAvg);
         System.out.println((roundingAvg > 3) ? "Программа выполнена корректно" : "Error");
     }
 
