@@ -3,108 +3,63 @@ package Task6;
 import java.util.Scanner;
 
 public class Converter {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        LengthConverter lengthConverter = new LengthConverter();
-//        WeightConverter weightConverter = new WeightConverter();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Выберите что переводить: 1 - масса, 2 - расстояние");
         int converterMode = scanner.nextInt(); // режим конвертации
         switch (converterMode) {
             case 1:
-                // weightConverter.weight();
+                System.out.println("Выберите единицу измерения: 1 - килограмм, 2 - грамм, 3 - унция, 4 - фунт");
+                break;
             case 2:
                 System.out.println("Выберите единицу измерения: 1 - метр, 2 - миля, 3 - ярд, 4 - фут");
-                int converterUnit = scanner.nextInt(); // единица конвертации
-                if (1 <= converterUnit & converterUnit <= 4) {
-                    System.out.println("Введите число");
-                    double valueUnit = scanner.nextDouble(); // значение единицы конвертации
-                    lengthConverter.length(converterUnit, valueUnit);
-                } else System.out.println("Данной единицы измерения нет в списке");
                 break;
             default:
                 System.out.println("Данного режима конвертации нет в списке");
         }
-    }
-}
 
-class LengthConverter {
-    public static String length(int converterUnit, double valueUnit) {
-        switch (converterUnit) {
-            case 1:
-                LengthConverter.convertToMeter(converterUnit, valueUnit);
-                break;
-            case 2:
-                LengthConverter.convertToMile(converterUnit, valueUnit);
-                break;
-            case 3:
-                LengthConverter.convertToYard(converterUnit, valueUnit);
-                break;
-            case 4:
-                LengthConverter.convertToFoot(converterUnit, valueUnit);
-                break;
-        }
-        return "Вы выбрали еденицу измерения : 2 - расстояние";
+        int converterUnit = scanner.nextInt(); // единица конвертации
+        if (converterUnit >= 1 & converterUnit <= 4) {
+            System.out.println("Введите число");
+            double valueUnit = scanner.nextDouble(); // значение единицы конвертации
+            if (converterMode == 1) {
+                weightConverter(converterUnit, valueUnit);
+            } else if (converterMode == 2) {
+                lengthConverter(converterUnit, valueUnit);
+            } else {
+            }
+        } else System.out.println("Данной единицы измерения нет в списке");
     }
 
-    public static double convertToMeter(int converterUnit, double valueUnit) {
-        switch (converterUnit) {
-            case 1:
-                System.out.println("Метры: " + valueUnit);
-            case 2:
-                double meterToMile = valueUnit * 0.0006;
-                System.out.println("Мили: " + String.format("%.3f", meterToMile));
-            case 3:
-                double meterToYard = valueUnit * 1.094;
-                System.out.println("Ядра: " + String.format("%.2f", meterToYard));
-            case 4:
-                double meterToFoot = valueUnit * 3.281;
-                System.out.println("Футы: " + String.format("%.2f", meterToFoot));
+    private static void lengthConverter(int converterUnit, double valueUnit) {
+        String[] text = {"Метры: ", "Мили: ", "Ярды: ", "Футы: "};
+        double[][] coefficients =
+                {
+                        {1, 0.0006, 1.094, 3.281},
+                        {1609.34, 1, 1760, 5280},
+                        {0.9144, 0.000568182, 1, 3},
+                        {0.3048, 0.000189394, 0.333333, 1}
+                };
+
+        for (int i = 0; i < coefficients.length; i++) {
+            System.out.println(text[i] + String.format("%.3f", valueUnit * coefficients[converterUnit - 1][i]));
         }
-        return valueUnit;
     }
 
-    public static double convertToMile(int converterUnit, double valueUnit) {
-        switch (converterUnit) {
-            case 2:
-                System.out.println("Мили: " + valueUnit);
-            case 3:
-                double mileToYard = valueUnit * 1824;
-                System.out.println("Ярды: " + String.format("%.2f", mileToYard));
-            case 4:
-                double mileToFoot = valueUnit * 5469;
-                System.out.println("Футы: " + String.format("%.2f", mileToFoot));
-            case 1:
-                double mileToMeter = valueUnit * 1667.34;
-                System.out.println("Метры: " + String.format("%.2f", mileToMeter));
-        }
-        return valueUnit;
-    }
+    private static void weightConverter(int converterUnit, double valueUnit) {
+        String[] text = {"Килограмы: ", "Грамы: ", "Унции: ", "Фунты: "};
+        double[][] coefficients =
+                {
+                        {1, 1000, 35, 274, 2, 20462},
+                        {0.001, 1, 0.035274, 0.00220462},
+                        {0.0283495, 28.3495, 1, 0.0625},
+                        {0.453592, 453.592, 16, 1}
+                };
 
-    public static double convertToYard(int converterUnit, double valueUnit) {
-        switch (converterUnit) {
-            case 3:
-                System.out.println("Ярды: " + valueUnit);
-            case 2:
-                System.out.println("Мили: " + valueUnit * 0.000568182);
-            case 1:
-                System.out.println("Метры: " + valueUnit * 0.9144);
-            case 4:
-                System.out.println("Футы: " + valueUnit * 3);
+        for (int i = 0; i < coefficients.length; i++) {
+            System.out.println(text[i] + String.format("%.3f", valueUnit * coefficients[converterUnit - 1][i]));
         }
-        return valueUnit;
-    }
 
-    public static double convertToFoot(int converterUnit, double valueUnit) {
-        switch (converterUnit) {
-            case 4:
-                System.out.println("Футы: " + valueUnit);
-            case 3:
-                System.out.println("Ярды: " + valueUnit * 0.333333);
-            case 2:
-                System.out.println("Мили: " + valueUnit * 0.000189394);
-            case 1:
-                System.out.println("Метры: " + valueUnit * 0.3048);
-        }
-        return valueUnit;
     }
 }
