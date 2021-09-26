@@ -7,20 +7,23 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
-        String operator = scanner.next();
+        char operator = scanner.next().charAt(0);
 
         switch (operator) {
-            case "/":
-                if (b != 0) System.out.println(a / b);
-                else System.out.println("На 0 делить нельзя!");
+            case '/':
+                if (b != 0) {
+                    System.out.println(a / b);
+                } else {
+                    System.out.println("На 0 делить нельзя!");
+                }
                 break;
-            case "*":
+            case '*':
                 System.out.println(a * b);
                 break;
-            case "+":
+            case '+':
                 System.out.println(a + b);
                 break;
-            case "-":
+            case '-':
                 System.out.println(a - b);
                 break;
             default:
