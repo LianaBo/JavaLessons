@@ -27,7 +27,6 @@ public class Converter {
                 weightConverter(converterUnit, valueUnit);
             } else if (converterMode == 2) {
                 lengthConverter(converterUnit, valueUnit);
-            } else {
             }
         } else System.out.println("Данной единицы измерения нет в списке");
     }
