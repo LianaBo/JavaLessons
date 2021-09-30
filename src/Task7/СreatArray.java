@@ -31,7 +31,7 @@ public class СreatArray {
 
     static void chekArray(double value) {
         if (value == X || value == Y || value == Z) {
-            System.out.println("Данное значение имеется в константах: " + value);
+            System.out.println("Значение " + value + " имеется в константах");
         }
     }
 }

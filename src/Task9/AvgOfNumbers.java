@@ -15,7 +15,6 @@ public class AvgOfNumbers {
             System.out.println("Заполните массив числовыми значениями");
             fillArray(myArray); // заполнение массива
             avgOfNumderArray(myArray);
-//            multipliedElementOfArray();
         } else {
             System.out.println("Вы задали некорректный размер массива. Размер массива не может быть отрицательным");
         }
@@ -32,18 +31,19 @@ public class AvgOfNumbers {
 
     public static double avgOfNumderArray(double[] myArray) {
         double sumNumber = 0;
-        for (double num : myArray){
+        for (double num : myArray) {
             sumNumber += num;
         }
         double avgNumder = sumNumber / myArray.length;
         System.out.println("Среднее арифметическое элементов массива: " + avgNumder);
+        multipliedElementOfArray(myArray,avgNumder);
         return avgNumder;
     }
 
-//    private static void multipliedElementOfArray( double[] myArray,avgNumder) {
-//        for (int i = 0; i < myArray.length;i++){
-//            myArray[i] = myArray[i] * avgNumder;
-//        }
-//        System.out.println(Arrays.toString(myArray));
-//    }
+    private static void multipliedElementOfArray(double[] myArray, double avgNumder) {
+        for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = myArray[i] * avgNumder;
+        }
+        System.out.println(Arrays.toString(myArray));
+    }
 }
