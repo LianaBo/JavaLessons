@@ -7,41 +7,31 @@ public class DataСonversion {
 
     public static void main(String[] args) {
         System.out.println("Введите первое число");
-        int firstNumber = scanner.nextInt();
-        numberToString(firstNumber);
+        String firstNumber = scanner.next();
+        double stringToDouble = Double.valueOf(firstNumber);
 
         System.out.println("Введите второе число");
-        double secondNumber = scanner.nextDouble();
-        numberToInt(secondNumber);
-        printCompareNumber(firstNumber, secondNumber);
+        int secondNumber = scanner.nextInt();
+        double intToDouble = Double.valueOf(secondNumber);
+
+        printCompareNumber(stringToDouble, intToDouble);
     }
 
-    public static String numberToString(int firstNumber) {
-        String toString = Integer.toString(firstNumber);
-        return toString;
-    }
-
-    public static int numberToInt(double secondNumber) {
-        int toInt = (int) secondNumber;
-        return toInt;
-    }
-
-    public static void printCompareNumber(int firstNumber, double secondNumber) {
-        if (firstNumber == secondNumber) {
+    public static void printCompareNumber(double stringToDouble, double intToDouble) {
+        if (stringToDouble == intToDouble) {
             System.out.println("Числа равны");
         } else {
             System.out.println("Числа не равны");
-            printMaxNumber(firstNumber, secondNumber);
-            printMinNumber(firstNumber, secondNumber);
+            printMaxNumber(stringToDouble, intToDouble);
+            printMinNumber(stringToDouble, intToDouble);
         }
     }
 
-    public static void printMaxNumber(int firstNumber, double secondNumber) {
-        System.out.println("Наибольшее из чисел: " + Math.max(firstNumber, secondNumber));
+    public static void printMaxNumber(double stringToDouble, double intToDouble) {
+        System.out.println("Наибольшее из чисел: " + Math.max(stringToDouble, intToDouble));
     }
 
-    public static void printMinNumber(int firstNumber, double secondNumber) {
-        double convertTypeMinNumber = Math.min(firstNumber, secondNumber);
-        System.out.println("Наименьшее число: " + convertTypeMinNumber);
+    public static void printMinNumber(double stringToDouble, double intToDouble) {
+        System.out.println("Наименьшее число: " + Math.min(stringToDouble, intToDouble));
     }
 }
