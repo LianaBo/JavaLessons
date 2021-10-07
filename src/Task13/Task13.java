@@ -17,10 +17,9 @@ public class Task13 {
 
     public static void checkString(String string) {
         String[] arrString = string.split(" "); // разделяем строку
-        System.out.println(Arrays.deepToString(arrString));
         int count = 0;
         for (int i = 0; i < arrString.length; i++) {
-            if (arrString[i].matches("[^а-яА-Я0-9]*")){  // регулярное выражение от Аа-Яя и 0 - 9
+            if (arrString[i].matches("[^а-яА-Я0-9]+")){  // регулярное выражение от Аа-Яя и 0 - 9
                 System.out.println(arrString[i]);
                 count++;
             }
