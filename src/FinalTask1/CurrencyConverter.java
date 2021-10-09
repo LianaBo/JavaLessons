@@ -1,4 +1,4 @@
-package FinaTask1;
+package FinalTask1;
 
 import java.util.Scanner;
 
