@@ -9,8 +9,7 @@ public class RandArr {
     public static void main(String[] args) {
         int[] myArr = new int[15];
         randomFillArr(myArr);
-        absValue(printMaxValueArr(myArr), printMinValueArr(myArr));
-
+        printMaxAbsValue(printMaxValueArr(myArr), printMinValueArr(myArr));
     }
 
     public static void randomFillArr(int[] myArr) {
@@ -42,7 +41,7 @@ public class RandArr {
         return minValue;
     }
 
-    public static void absValue(int i, int j) {
+    public static void printMaxAbsValue(int i, int j) {
         int abs = Math.max(Math.abs(i), Math.abs(j));
         System.out.println(abs);
     }
