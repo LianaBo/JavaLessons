@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class RandArr {
-    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         int[] myArr = new int[15];
@@ -14,7 +13,7 @@ public class RandArr {
 
     public static void randomFillArr(int[] myArr) {
         for (int i = 0; i < myArr.length; i++) {
-            myArr[i] = (int) (-20 + ((Math.random() * 41)));
+            myArr[i] = (int) (-21 + ((Math.random() * 42)));
         }
         System.out.println(Arrays.toString(myArr));
     }
