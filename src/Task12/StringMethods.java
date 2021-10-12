@@ -17,7 +17,7 @@ public class StringMethods {
         boolean startsWith = massage.startsWith("I like");
         boolean endsWith = massage.endsWith("!!!");
 
-        if (contains == true && startsWith == true && endsWith == true) {
+        if (contains && startsWith && endsWith) {
             System.out.println(massage.toUpperCase());
         }
     }
