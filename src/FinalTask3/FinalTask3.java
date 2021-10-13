@@ -9,7 +9,7 @@ public class FinalTask3 {
     public static void main(String[] args) {
         System.out.println("Какое количество слов вы хотите ввести?");
         int countString = in.nextInt();
-        String[] stringArr = new String[countString]; //создаем двумерный массив
+        String[] stringArr = new String[countString];
         fillArray(stringArr);
         checkArray(stringArr);
     }
@@ -18,12 +18,11 @@ public class FinalTask3 {
         for (int i = 0; i < stringArr.length; i++) {
             stringArr[i] = in.next();
         }
-        System.out.println(Arrays.toString(stringArr));
     }
 
     public static void checkArray(String[] stringArr) {
         int indexMinMatches = 0;   // индекс строки, в которой содержится минимальное количество совпадений
-        int countMinMatches = Integer.MAX_VALUE;
+        int countMinMatches = Integer.MAX_VALUE;  // подсчет минимального количества совпадений
         for (int i = 0; i < stringArr.length; i++) {
             int count = 0;
             for (int j = 0; j < stringArr[i].length(); j++) {
