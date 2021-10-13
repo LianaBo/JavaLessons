@@ -21,8 +21,8 @@ public class FinalTask3 {
     }
 
     public static void checkArray(String[] stringArr) {
-        int indexMinMatches = 0;   // индекс строки, в которой содержится минимальное количество совпадений
-        int countMinMatches = Integer.MAX_VALUE;  // подсчет минимального количества совпадений
+        int indexMinMatches = 0;   // индекс слова, в котором содержится минимальное количество совпадений
+        int countMinMatches = Integer.MAX_VALUE;  // подсчет наименьшего количества совпадений в слове
         for (int i = 0; i < stringArr.length; i++) {
             int count = 0;
             for (int j = 0; j < stringArr[i].length(); j++) {
